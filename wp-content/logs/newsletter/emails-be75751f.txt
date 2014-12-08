@@ -1,0 +1,3 @@
+10-12-2012 13:35:33 - ERROR - Can't DROP 'visibility'; check that column/key exists
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'token'
+25-01-2013 01:05:34 - ERROR - Can't DROP 'visibility'; check that column/key exists

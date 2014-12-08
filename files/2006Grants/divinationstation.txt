@@ -1,0 +1,264 @@
+art_name: Divination Station
+
+snailmail: No
+
+brief_descrip: Note: Many parts of this are based on BRC and not Apo. I
+               want it fully functional for Apo, however, I realize we
+               may not have intersection street names by then and thus
+               we will include camps and Apo installations to go to
+               instead. 
+                
+               Overview 
+                
+                
+               This is a dusk-till-dawn only voting station with a 4.5'
+               x 6' screen and a podium, about 8 feet away from the
+               screen, gives the ability to vote  Hope,   Fear,  or 
+               Action.  Each vote triggers a graphic visual display
+               according to the category chosen, ending on a Tarot card
+               for a one card divination.  The vote will also be
+               tallied and the totals given before the burn on Saturday
+               night. 
+                
+               The Major Arcana of the Tarot has 22 cards, including
+               Zero - the Fool. These are divided up between the three
+               sections.  To vote, the participant presses the button
+               of their choice on the podium voting interface. After a
+               random multimedia presentation chosen for its relevance
+               to the selection, an image of the card is displayed
+               along with a description of its traditional
+               interpretation and an explanation of why it was chosen
+               for this instance at Happy Ass Ranch.  Along with this,
+               a street intersection will also be displayed, giving
+               participants a choice for instant manifestation and
+               further participation within Apogaea as a whole. 
+                
+               We want people to use this as a tool for what to do next
+               on their spiritual journey throughout the fest.   
+                
+               Another button for  Inaction  will be included on the
+               interface for the indecisive or fool-hardy.  This will
+               merely cause a continuous stream of all graphics, with
+               the delay between each shortening over time until it
+               becomes a freakishly quick amalgam of visual overload
+               which begs the participant to make up h(i)r own mind. 
+               Inaction does not place a counter towards anything.  The
+               installation will default to this setting after a set
+               period of time.  The quickly changing images should
+               serve to bring passers-by to the booth and interact with
+               it. 
+                
+               We have several visual artists designing the cards based
+               on Burning Man themes from the time of their inception
+               to the present. This is the 21st year of the
+               Celebration, one card per year, with Zero representing a
+               new, unknown beginning.   07? We are designing the cards
+               according to the Tarot, but naming them according to
+               different hopes and fears.  Examples: Card 1 The
+               Magician - A painting of Larry Harvey sending them to
+               Center Camp, Card 21 The Universe - Painting of Mudhenge
+               1996 sending them to the Man. 
+                
+               Writing implements will be provided so they may inscribe
+               the location on themselves or compatriots for later
+               reference.  They can come back as often as they like and
+               be sent somewhere new each time (or the same one,
+               depending on the Cosmos.)  This sends them off to
+               participate with other installations around Apogaea,
+               allowing them instant manifestation of their divination.
+               
+                
+                 
+               The Interface 
+                
+               The User Interface (UI) will run a Windows platform and
+               will be written as a locally installed web based
+               Application, using a combination of standard HTML, JSP
+               (Java Server Pages), Macromedia Flash, and Java.  A web
+               browser will be the interface that is used to display
+               the UI to the user via the digital projector.  The
+               buttons on the voting booth will interact with the
+               application and perform the actions indicated by the
+               users vote choice. 
+                
+               The UI will be driven by a donated used computer running
+               a very scaled-down version of Linux (probably
+               DamnSmallLinux).  We will have at least one spare
+               computer on hand in case the first succumbs to the playa
+               conditions.  Our filtered air circulation system should
+               provide sufficient protection, however. 
+                
+               Physical Dimensions 
+                
+               The display will be provided by a video projection onto
+               an anchored lycra screen 4.5' x 6' placed approximately
+               8 feet from the podium.  The screen will be elevated,
+               such that the eye levels of the participant and card
+               will meet.  The screen will be free-standing on an
+               A-frame and doubly secured with guy-wires anchored into
+               the playa.   
+                
+               The voting itself will be conducted via a modified Simon
+               game console mounted to a 4' pedestal which contains the
+               video projector and the computer driving the system. 
+               This will be anchored to the playa with rebar staples to
+               prevent  liberation .  Audio will be provided by
+               speakers mounted astride the screen. 
+                
+               The pedestal will also include a filtered air
+               circulation system.  This serves two functions, one
+               practical, one functionally artistic.  The filtered air
+               will cool both of the components and the hot air will be
+               exhausted around the voting implement itself.  The Simon
+               will be surrounded by lighting and  faux fire  fabric
+               with the delicious effect that participants will need to
+               place the body part with which they wish to vote into
+               the  fire.   We find this good. 
+                
+               Leading from the exterior of the installation to the
+               screen will be a runway of purple Astroturf with a
+               border of chasing rope-light to guide the participants
+               in and round-out their initial experience. 
+                
+               The final stage is ornamentation which will follow the
+               same simple lines of Art Deco as the structure of the
+               Man.  To follow the ethereal spirit of the installation,
+               the colours we've chosen are white, silver and gold. 
+               These will adorn the edges of the screen and the opaque
+               portions of the podium.  The entire installation will be
+               inside a 16' 2-frequency dome to further protect it from
+               the harsher elements of the playa and provide a warm
+               shelter for the crew and participants. 
+                
+               There is a human aspect beyond the installation itself
+               and the participants.  One member of our crew will be
+               present to greet and guide the interactants through the
+               process.  (S)he will be wearing the  Great Robe of
+               Divination  which will be a playafied gameshow-host
+               (think Gene Rayburn) outfit.  This person will be
+               replete with a suitably antique microphone piped through
+               the sound system.  Intensive training will be given to
+               all who would wear the  GRoD .  This delights the team
+               endlessly. 
+                
+               We are going to be bringing a generator to power all of
+               it. The fuel cans will be placed in an open-topped crate
+               at least 15' from the generator or anything else which
+               is deemed a possible fire hazard. 
+
+
+purpose: Because of the level of interaction with this piece, it must
+         be a centerpiece of the camp. As stated above, this a dusk til
+         dawn only installation, though it will be inside a dome and
+         with Apogaea being only 3 days long I'm willing to try it
+         during the day for extra interactive time. Anyone can utilize
+         Divination Station, the graphics have been chosen to be "safe"
+         for people of all walks of life and yet still bring an element
+         of deep thought.
+
+lnt: Our materials for construction will be wood, synthetic fabric and
+     general hardware. 
+      
+     Everything will be made for easier set-up/take-down. I want it to
+     be completely self-contained within it's dome, everything with
+     it's own travel packaging. I do not want to lose any part of the
+     Station as it will be at Burning Man this year for the entire
+     event. Myself and my crew will break everything down on Sunday and
+     make sure the land it was on looks as untouched as possible. All
+     holes filled, grasses raked and all little pieces where they
+     belong - in their travel crates.
+
+safety: We have extras of all vital parts within our plans. More than
+        one harddrive with the OS and program in full on them, more
+        than one Simon game consol ready to be plugged in and used. As
+        well as education on what to do in case of a break-down for all
+        Emcees and two-way radios for all vital members of the crew
+        (programmer, engineer and myself,) so that we can be found and
+        brought back immediately in case of an emergency. 
+         
+        There will be plenty of flashy lights, but no fire,
+        conbustibles or pointy objects. I'm clumsy and if I cannot use
+        it without hurting myself, I won't use it at all for the
+        Station. 
+         
+        Here is our full saftey plan: 
+        We are implementing the use of LED rope and rope lights to
+        illuminate the frames of the screen, its A-frame and guy-lines.
+        As we mentioned in the description of the podium above, there
+        will be lights on the top of the podium, there will be LED rope
+        down the front side-seams of it also.  
+         
+        The podium and A-frame will have holes in the legs and rebar
+        staples of the appropriate length run through them, securing
+        both podium and screen to the playa. The guy-wires will also be
+        anchored to the playa via rebar staples.  All staples will be
+        both, flush with the ground and fully lit by the LED ropes to
+        prevent tripping or possible collision with art cars, cyclists
+        or pedestrians.  In case of generator failure, we will have
+        battery operated lights which we can turn on immediately to
+        allow full visibility. 
+
+
+rating: PG
+
+schedule: Since we will have only set it up in familiar settings, I
+          would prefer to get it there on Thursday at the latest. Give
+          us enough time to build the big pieces, get the dome up and
+          do a start up and dry run before the public interacts with
+          it. Make sure all bugs have been dealt with to the fullest
+          extent.
+
+textarea: 2x4's                          Home Depot 8 @ $2.79 = $22.32 
+           
+          3/8" x 4' x 8' particle board   Home Depot      1 @ $9.99  
+          5/8" x 4' x 8' particle board   Home Depot      1 @ $11.88  
+           
+          5yds x 62" lycra white          Ebay    5 yards @ $41  
+           
+          Acrylic sheet 2'X3' 3/16"       Home Depot      1 @ $20 
+           
+          Ropelight 50'           Ebay + Donations        1 @ $15 
+          LED Rope 50             Ebay                    1 @ $15  
+           
+          Simon game      Donations / Thrift Store 2 @ $5 = $10  
+           
+          General hardware        Home Depot and donations = $15 
+          Corex 4" x 10'          Home Depot              1 @ $4 
+          Furnace filters 3 pack  Home Depot              2 @ $5 = $10 
+           
+          Digital video projector local purchase or donation $400 
+          Paint for décor         Home Depot 3 qts @ $8.69 = $26.07 
+           
+          Coleman 5kW generator   Lowe's or donation     1 @ $599.00 
+          Fuel for generator      Lake George 15 gal. @ $3.00  = $45 
+          Generator sound baffle materials Home Depot/donation 1 @ $25 
+           
+          16' geodesic dome w/ PVC cover  donation 
+          Astroturf or carpet 4' x 11'    donation/salvage 
+          Centrifugal blower              Donation by ahwoo 
+          Computer hardware               donation                     
+             
+          Keyboard/Monitor/Mouse          donation                     
+             
+          Paintboard                      donation                     
+             
+          Paint for artists               donation                 
+          All decorative fabric           donation                     
+             
+          Gas cans                        donation                     
+             
+          Emcee microphone                donation 
+          Emcee  Great Robe of Divination  Priceless 
+           
+          Total without further material donations: $1269.26 
+          Though more and more donations are being offered, so I
+          believe this total will go down even further. (We've already
+          shaved off $700 since the beginning of March and have someone
+          wanting to donate much of the remaining amount after all
+          other resources have been tapped.) 
+
+
+textarea2: Realistically, with the donations coming in of both
+           materials and funds, we could make do with about $400 -
+           $500. This would go towards the projector purchase or
+           generator, our two most expensive parts of the project.

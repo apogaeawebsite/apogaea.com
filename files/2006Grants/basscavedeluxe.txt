@@ -1,0 +1,74 @@
+art_name: Bass Cave deluxe
+
+snailmail: No
+
+brief_descrip: grant will go towards: 
+                
+               Artist flight from California 
+               Bass Cave infrastructure + artwork expenses + gas costs
+               +  generator costs
+
+purpose: This is a request for a grant to bring a Live PA psychedelic
+         artist from California to play at the Bass Cave camp. This is
+         an artist who performed numerous times at Burning Man,
+         including the largest sound systems on the playa (Friends and
+         Family in 2005, Sol System in 2003-2004, BassWaves in 2002).
+         He is a consummate performer, and his music is extremely
+         psychoactive and a lot of fun. He will gift his performance
+         fee, but we need help to pay for his flight to Denver.  
+          
+         Plus we'd like help with some of the costs associated with the
+         Bass Cave camp setup and infrastructure (last year we spent
+         hundreds of our own dollars for gas/lights/art supplies/etc).
+         The Bass Cave will consist of a large-scale sound system,
+         fluorescent artwork surrounding the area, and several
+         string-art pieces. This is a 24/7 installation.  
+
+
+lnt: We're all experienced burners and will provide trash bags during
+     the performance and clean up the location afterwards. 
+
+safety: We will provide free earplugs and lights to illuminate the
+        passage to the Bass Cave. 
+
+rating: PG
+
+schedule: We will be there on Thursday night/Friday morning to set up. 
+
+textarea: Round Trip flight from California and associated costs - $400
+          
+          10 kW generator rental - $200 
+          (very) partial cost of gas for generators - $100 
+          Art supplies for fluorescent art/lights/earplugs/etc - $100 
+          ------ 
+          $800 
+
+
+textarea2: If there is a WORKING 10k+ generator on-site with diesel/gas
+           provided, we can do with $450. But the last 2 times we set
+           up at the HAR, the generators either died or didn't work
+           right (@ the last Apogaea where we had to use 4 other
+           generators we brought with us and/or borrowed after the main
+           genny died, plus $200 worth of our own gas as well - and at
+           Earthdance where the 20K diesel generator rented by Skip in
+           town would shut off about every 45 minutes). Our system
+           requires about 10kW of power minimum, from a single source.
+           We have smaller generators (5500 and 6000 watts) which we
+           can use for lights/blacklights.  
+            
+           We usually rent gennies from Nations Rent - they have very
+           reasonable weekly rates for large generators (something like
+           ~$200 per week for anything larger than 10kW) and they are
+           reliable.  
+            
+           If we don't get the money to bring the artist here, we'll
+           still show up with our own DJs - but it would be great to
+           have an infusion of some new amazing music, in my opinion,
+           and a way to raise Apogaea's profile.  
+
+
+web_descrip: The Bass Cave - the habitat of the endangered alien bass
+             fish from Neptune. By synchronizing vibrations of their
+             bodies, they create powerful waves of energy that enter
+             and cleanse your higher awareness while making your rump
+             shake uncontrollably to the beat. 

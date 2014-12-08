@@ -1,0 +1,20 @@
+<div id='coin-slider'>
+	<a href="img01_url" target="_blank">
+		<img src='img01.jpg' >
+		<span>
+			Description for img01
+		</span>
+	</a>
+	<a href="imgN_url">
+		<img src='imgN.jpg' >
+		<span>
+			Description for imgN
+		</span>
+	</a>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#coin-slider').coinslider({width: 528; height: 290; delay: 2000; sDelay 20;});
+	});
+</script>

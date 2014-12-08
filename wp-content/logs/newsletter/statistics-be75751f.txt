@@ -1,0 +1,17 @@
+07-12-2012 20:33:04 - ERROR - Table 'apogaea_com.wp_z4xsr5_newsletter_stats' doesn't exist
+07-12-2012 20:33:04 - ERROR - Table 'apogaea_com.wp_z4xsr5_newsletter_stats' doesn't exist
+07-12-2012 20:33:04 - ERROR - Table 'apogaea_com.wp_z4xsr5_newsletter_stats' doesn't exist
+07-12-2012 20:33:04 - ERROR - Duplicate column name 'user_id'
+25-01-2013 01:05:34 - ERROR - Unknown column 'newsletter_id' in 'wp_z4xsr5_newsletter_stats'
+25-01-2013 01:05:34 - ERROR - Unknown column 'newsletter_id' in 'wp_z4xsr5_newsletter_stats'
+25-01-2013 01:05:34 - ERROR - Unknown column 'date' in 'wp_z4xsr5_newsletter_stats'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'user_id'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'email_id'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'link_id'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'user_id'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'created'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'url'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'anchor'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'email_id'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'token'
+25-01-2013 01:05:34 - ERROR - Duplicate column name 'text'

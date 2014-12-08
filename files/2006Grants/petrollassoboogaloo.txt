@@ -1,0 +1,106 @@
+art_name: The Petrol Lasso Boogaloo
+
+snailmail: No
+
+brief_descrip: The main drive unit will be housed in a brushed and
+               painted steel cube roughly 2.5 feet on each side. 
+                
+               The Petrol Lasso Boogaloo is self-powered and runs on
+               gasoline.
+
+purpose: The Petrol Lasso Boogaloo is the next step in Boogaloo
+         technology.  Like its predecessor, the Electric Lasso
+         Boogaloo, the PLB is a cyclic rope flinger, hurling a length
+         of blacklight reactive climber's rope in a continuous loop
+         perpendicular to the horizon.   
+          
+         Where the ELB was able to attain a meager 15 foot height, the
+         Petrol Lasso Boogaloo should be able to reach the dizzying
+         height of 40 feet or possibly more through the use of an
+         engine roughly 18 times more powerful than before and a drive
+         mechanism vastly improved over the original.  
+           
+         The PLB will most likely be moored at the edge of my camp but
+         because it is self-powered, it can be placed anywhere at Happy
+         Ass Ranch, as long as there is room for the throw.  If other
+         participants want to incorporate it into a performance piece,
+         so much the better! 
+           
+         The PLB works best when participants interact with it.  When
+         left to its own devices, it returns to its default state of a
+         gently waving arch of rope in the sky.  When participants
+         perturb the rope, it comes to life, forming graceful loops and
+         swirls in the sky.   
+          
+         While it is quite impressive during the daytime, the
+         blacklight nature of the rope makes it spectacular at night,
+         where it transforms into an undulating, fluorescent alien
+         being. 
+
+lnt: The rope for the PLB travels through the air for most of its
+     journey, but on its return trip it lands on tarps laid out in its
+     path.  This is not only essential for avoiding damage to the rope,
+     but also prevents the rope from digging a rut in the soil.  
+       
+     Because it is a gas engine, the main drive unit will also be
+     sitting on a tarp to catch any stray petroleum product leaks and
+     keep them from contaminating the Ranch.
+
+safety: Like many fun things, the PLB *does* have the potential of
+        causing harm -- it's a rapidly moving rope, after all.  The
+        main possible hazards are rope burns and someone getting caught
+        in the rope.  The operator (Boog Jockey or BJ) will try to keep
+        people from grabbing the rope in a foolish fashion and getting
+        a friction burn on their hands.  Gloves will also be on hand
+        for the uninitiated and/or those wishing to intentionally be
+        foolish.     
+         
+          
+        The new and improved drive mechanism makes use of a manual
+        clutch system and throttle control in the form of a "Carny
+        Lever" which requires active operator tension to operate. In
+        the event that anything gets caught in the rope, the operator
+        releases the spring-loaded lever which immediately disengages
+        the drive mechanism and the rope tension will drop to zero.  
+          
+        If, during testing, Team Boogaloo discovers that this is
+        insufficient, we will address other means of protecting the
+        participants while maintaining maximum safe interactivity
+
+rating: G
+
+schedule: The PLB's portable nature means that we will require no
+          special consideration for setup.
+
+textarea: Engine $200 
+	Rope $100 
+          Sheet Steel $80 
+          Tools $75 
+          Angle Iron $25 
+          Hardware $50 
+          Paint $15 
+          Petrol $20 
+           
+          TOTAL $565 
+
+
+textarea2: $400 would be the ideal grant to get the PLB up and running
+           in time for the event.  That may seem like a lot, but I live
+           on a very limited budget and funding the Petrol Lasso
+           Boogaloo myself would be cost-prohibitive. 
+             
+           We have 2/3 of the original Team Boogaloo working on this
+           latest iteration and a sucessful proof-of-concept under our
+           belts.  The robustness of the new design, combined with its
+           sturdier construction, will mean that the PLB will be able
+           to be enjoyed by both our regional community at Apogaea (and
+           other events) and the national Burning Man community on the
+           playa for many seasons to come.    
+             
+           Given the attention the ELB got both within and outside our
+           community (several column inches in the Westword story), I
+           think it would be money well spent by the organization.   
+            
+           Thank you very much for your consideration.  If you need
+           clarification, have other concerns, or just want to chat
+           about Boogaloos, please don't hesitate to call or write!
