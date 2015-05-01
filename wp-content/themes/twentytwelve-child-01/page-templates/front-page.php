@@ -33,11 +33,11 @@ get_header(); ?>
 		<div id="homebelow">
 
 
-		<a class="gridbutton" id="gridbutton1" href="http://apogaea.com/the-event/prepare/"><span>Prepare for the Event</span><img src="http://apogaea.com/wp-content/uploads/2010/01/4705034811_c59d779ace_b1.jpg" alt="Prepare for the Event" title="Prepare for the Event" /></a>
+<a class="gridbutton" id="gridbutton1" href="http://ticketexchange.apogaea.com/" target="_blank"><span>Ticket Exchange</span><img src="http://apogaea.com/wp-content/uploads/2015/03/Ticket-Exchange-Logo-thumb.png" alt="Ticket Exchange" title="Ticket Exchange" /></a>
 <a class="gridbutton" id="gridbutton2" href="http://apogaea.com/get-involved/"><span>Participate in Apogaea</span><img src="http://apogaea.com/wp-content/uploads/2014/02/Apo2013_Keli_Play_Sm.jpg" alt="Participate in Apogaea" title="Participate in Apogaea" /></a>
 <a class="gridbutton" id="gridbutton3" href="http://apogaea.com/the-event/tickets/"><span>Ticket Information</span><img src="http://apogaea.com/wp-content/uploads/2014/02/2014TicketDesignCS_Sm.jpg" alt="Ticket Information" title="" /></a>
 
-<div style="clear: left"></div>
+		  <div style="clear: left"></div>
 </div>
 
 		</div><!-- #content -->

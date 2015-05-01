@@ -3,8 +3,8 @@ Contributors: johnnytee
 Donate link: http://seedprod.com/
 Tags: wordpress coming soon, wordpress maintenance mode. wordpress under construction, maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
-Tested up to: 3.9.1
-Stable tag: 1.10.2
+Tested up to: 4.1.1
+Stable tag: 1.14.2
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -76,6 +76,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * French (fr_FR) by Gabriel Delattre
 * German (de_DE) by Frederic Ch. Reuter
 * Greek(el_EL) by [Mihalis Papanousis](http://aenaon.biz)
+* Indonesian (id_ID) by Nasrulhaq Muiz
 * Italian (it_IT) by Luca Barbetti
 * Persian(fa_IR) by [Ali Mirzaei](http://www.alimir.ir)
 * Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
@@ -83,6 +84,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Portuguese(pt_PT) by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
 * Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
 * Spanish(es_CO) by [Jaime Echeverry](http://jaime.co/)
+* Spanish(es_ES) by [WebHostingHub](http://webhostinghub.com)
 * Slovak (sk_SK) by [Branco Radenovich/WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
 * Swedish(sv_SE) by [Björn Sennbrink](https://github.com/Sennbrink/SeedProd-Ultimate-Coming-Soon-WP-Plugin-Swedish-Translation)
@@ -140,6 +142,33 @@ To fix:
 
 
 == Changelog ==
+= 1.14.2 =
+* Tweak: Updated Optin Form
+
+= 1.14.1 =
+* Added: Indonesian Translation
+* Fixed: Don't show feed if FeedBurner not enabled
+
+= 1.14.0 =
+* Added: Header scripts field
+
+= 1.13.1 =
+* Fixed: SSL Compatibility
+
+= 1.13.0 =
+* Added: Toggle to disable default excluded urls: login, admin, dashboard, account
+* Fixed: iframe height issue
+
+= 1.12.0 =
+* Added: responsiveness
+* Fixed: typo
+
+= 1.11.1 =
+* Fixed: unserialized message
+
+= 1.11.0 =
+* Added: Added Spanish Translation
+
 = 1.10.2 =
 * Added: Added Ukrainian Translation
 
@@ -318,6 +347,30 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.14.1 =
+* Added: Indonesian Translation
+* Fixed: Don't show feed if FeedBurner not enabled
+
+= 1.14.0 =
+* Added: Header scripts field
+
+= 1.13.1 =
+* Fixed: SSL Compatibility
+
+= 1.13.0 =
+* Added: Toggle to disable default excluded urls: login, admin, dashboard, account
+* Fixed: iframe height issue
+
+= 1.12.0 =
+* Added: responsiveness
+* Fixed: typo
+
+= 1.11.1 =
+* Fixed: unserialized message
+
+= 1.11.0 =
+* Added: Added Spanish Translation
+
 = 1.10.1 =
 * Fixed: Undefined Indexes
 

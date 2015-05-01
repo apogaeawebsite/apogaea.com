@@ -7,11 +7,11 @@
  * @since 0.1
  */
 
-if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {	
+if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
     class SeedProd_Ultimate_Coming_Soon_Page extends SeedProd_Framework {
-	
-		private $coming_soon_rendered = false; 
-        
+
+		private $coming_soon_rendered = false;
+
         /**
          *  Extend the base construct and add plugin specific hooks
          */
@@ -54,45 +54,54 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                     'meta'   => array( 'class' => 'ucsp-mode-active' ),
                 ) );
         }
-        
+
         /**
          * Display the coming soon page
          */
         function render_comingsoon_page() {
+                $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
+
+
                 // Return if a login page
-                if(preg_match("/login/i",$_SERVER['REQUEST_URI']) > 0){
+                if(empty($seedprod_comingsoon_options['disable_default_exclude_terms'])){
+                    if(preg_match("/login|admin|dashboard|account/i",$_SERVER['REQUEST_URI']) > 0){
+                        return false;
+                    }
+                }
+
+
+                // Show feed if feedburner is in use
+                if(!empty($seedprod_comingsoon_options['comingsoon_feedburner_address']) && is_feed()){
                     return false;
                 }
 
-	            if(!is_admin()){
-	                if(!is_feed()){
-	                    if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
-	                        $this->coming_soon_rendered = true;
-							$file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
-	                        include($file);
-	                    }
-	                }
-	            }
+
+                if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
+                    $this->coming_soon_rendered = true;
+					$file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
+                    include($file);
+                }
+
         }
-        
+
         /**
          * Load frontend scripts
          */
         function add_frontent_scripts() {
 				if($this->coming_soon_rendered){
-	                //wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );  
-	                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );  
-	                $data = array( 
+	                //wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );
+	                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );
+	                $data = array(
 	                    'msgdefault' => __( 'Enter Your Email' , 'ultimate-coming-soon-page'),
 	                    'msg500' => __( 'Error :( Please try again.' , 'ultimate-coming-soon-page'),
 	                    'msg400' => __( 'Please enter a valid email.' , 'ultimate-coming-soon-page'),
 	                    'msg200' => __( "You'll be notified soon!" , 'ultimate-coming-soon-page'),
-                
+
 	                );
 	                wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_err_msg', $data );
             	}
         }
-        
+
         /**
          * Create Database to Store Emails
          */
@@ -106,15 +115,15 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                     `created` timestamp NOT NULL default CURRENT_TIMESTAMP,
                     PRIMARY KEY (`id`)
                 );";
-            
+
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
- 
+
                 dbDelta($sql);
             }
-            
+
         }
-        
-        
+
+
         /**
          *  Callback for mailing list to be displayed in the admin area.
          */
@@ -127,7 +136,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                 exit();
             }
         }
-        
+
         /**
          *  Get List from MailChimp
          */
@@ -154,7 +163,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             }
             return $mailchimp_lists;
         }
-        
+
         /**
          *  Display mailing list field in admin
          */
@@ -172,7 +181,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
     	        echo "<option value='$k' ".($options[$id] == $k ? 'selected' : '').">$v</option>";
     	    }
     	    echo "</select><!--<button id='comingsoon_mailinglist_refresh' type='button' class='button-secondary'>Refresh</button>-->
-            <br><small class='description'>More Options in the Pro Version :)</small>
+            <br><small class='description'>More Options like MailChimp, Aweber, Gravity Forms and others in the <a href='http://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner' target='_blank'>Pro Version</a> :)</small>
             <script type='text/javascript'>
             jQuery(document).ready(function($) {
                 $('#comingsoon_mailinglist_refresh').click(function() {
@@ -187,12 +196,12 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                       });
                       $('#comingsoon_mailinglist_refresh').html('Lists Refreshed');
                     });
-                }); 
+                });
             });
             </script>
             ";
         }
-        
+
         /**
          * Subscribe User to Mailing List or return an error.
          */
@@ -204,7 +213,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                exit;
             }
             else
-            {   
+            {
                 $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
                 $email = $_GET['email'];
                 $errcode = 0;
@@ -233,13 +242,13 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                             $format_values
                         );
                     }
-                    
+
                     if($insert_result != false){
                         die('200');
                     }
                     exit;
                 }
-                
+
                 // if mailchimp option
                 require_once 'lib/MCAPI.class.php';
                 $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
@@ -255,11 +264,11 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                 	die('500');
                 } else {
                     die('200');
-                }  
+                }
                 exit;
             }
         }
-        
+
         /**
          * Incentive Section explanation Text
          */
@@ -268,7 +277,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
         	Just fill out either or both of the fileds below and the information will be displayed after you have succesfully captured their email.
         	', 'ultimate-coming-soon-page').'</p>';
         }
-        
+
         /**
         * Email Export
         */
@@ -281,11 +290,11 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                     $tablename = $wpdb->prefix . "seedprod_emails";
                     $sql = "SELECT email,created FROM " . $tablename;
                     $results = $wpdb->get_results($wpdb->prepare($sql));
-            
+
                      foreach ($results as $result) {
                      	$csv_output .= $result->email ."," . $result->created ."\n";
                      }
-            
+
                      $filename = $file."emails_".date("Y-m-d_H-i",time());
                      header("Content-type: text/plain");
                      header("Content-disposition: attachment; filename=".$filename.".csv");
@@ -306,11 +315,11 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                 exit;
             }
         }
-        
+
         /**
          * Callback Email Export
          */
-        function callback_database_field(){   
+        function callback_database_field(){
             $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_email_export_delete','seedprod_email_export_delete'));
             $data = array( 'delete_confirm' => __( 'Are you sure you want to DELETE all emails?' , 'ultimate-coming-soon-page') );
             wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_object', $data );
@@ -327,12 +336,12 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                            $('#comingsoon_delete_emails').html('Emails Deleted').attr('disabled','disabled');
                         });
                     }
-                }); 
+                });
             });
             </script>
             ";
         }
-        
+
         function plugin_action_links($links, $file) {
             $plugin_file = 'ultimate-coming-soon-page/ultimate-coming-soon-page.php';
             if ($file == $plugin_file) {
@@ -342,9 +351,9 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             return $links;
         }
 
-        
-        
-        // End of Class					
+
+
+        // End of Class
     }
 }
 
@@ -365,9 +374,9 @@ $seedprod_comingsoon->menu[] = array("type" => "add_options_page",
                          "callback" => array($seedprod_comingsoon,'option_page'),
                          "icon_url" => plugins_url('framework/seedprod-icon-16x16.png',dirname(__FILE__)),
                         );
-                        
+
 /**
- *  Do not replace validate_function. Create unique id and copy menu slug 
+ *  Do not replace validate_function. Create unique id and copy menu slug
  * from menu config. Create 'validate_function' if using custom validation.
  */
 $seedprod_comingsoon->options[] = array( "type" => "setting",
@@ -381,7 +390,7 @@ $seedprod_comingsoon->options[] = array( "type" => "setting",
  */
 $seedprod_comingsoon->options[] = array( "type" => "section",
                 "id" => "seedprod_section_coming_soon",
-				"label" => __("Settings", 'ultimate-coming-soon-page'),	
+				"label" => __("Settings", 'ultimate-coming-soon-page'),
 				"menu_slug" => "seedprod_coming_soon");
 
 
@@ -420,7 +429,7 @@ $seedprod_comingsoon->options[] = array( "type" => "wpeditor",
 				"class" => "large-text",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
-				);	
+				);
 
 $seedprod_comingsoon->options[] = array( "type" => "custom",
                 "id" => "comingsoon_mailinglist",
@@ -428,15 +437,24 @@ $seedprod_comingsoon->options[] = array( "type" => "custom",
                 "callback" => array($seedprod_comingsoon,'callback_mailinglist_field'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
-				);	
+				);
 
 $seedprod_comingsoon->options[] = array( "type" => "textbox",
                 "id" => "comingsoon_feedburner_address",
                 "label" => __("FeedBurn Address", 'ultimate-coming-soon-page'),
-                "desc" => __("Enter the part after http://feeds2.feedburner.com/ <a href='http://wordpress.org/extend/plugins/ultimate-coming-soon-page/faq/'' target='_blank'> Learn how</a> to use FeedBurner to collect emails.", 'ultimate-coming-soon-page'),
+                "desc" => __("<strong>Note:</strong> Enter the part after http://feeds2.feedburner.com/ <a href='http://wordpress.org/extend/plugins/ultimate-coming-soon-page/faq/'' target='_blank'> Learn how</a> to use FeedBurner to collect emails.", 'ultimate-coming-soon-page'),
                 "section_id" => "seedprod_section_coming_soon",
                 "setting_id" => "seedprod_comingsoon_options",
                 );
+
+$seedprod_comingsoon->options[] = array( "type" => "textarea",
+                "id" => "comingsoon_headerscripts",
+				"label" => __("Header Scripts", 'ultimate-coming-soon-page'),
+				"desc" => __("Enter any scripts that need to be outputted in the html head.", 'ultimate-coming-soon-page'),
+				"class" => "large-text",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
 
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_customhtml",
@@ -445,13 +463,23 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				"class" => "large-text",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
-				);	
-				
+				);
+
+$seedprod_comingsoon->options[] = array( "type" => "checkbox",
+                "id" => "disable_default_exclude_terms",
+                "label" => __("Disable Default Excluded URLs", 'ultimate-coming-soon-page'),
+                "desc" => sprintf(__("By default urls with the terms: login, admin, dashboard and account are excluded. Check to disbale. ", 'ultimate-coming-soon-page'),home_url()),
+                "option_values" => array('1'=>__('Yes', 'ultimate-coming-soon-page')),
+                "section_id" => "seedprod_section_coming_soon",
+                "setting_id" => "seedprod_comingsoon_options",
+                );
+
+
 $seedprod_comingsoon->options[] = array( "type" => "section",
                 "id" => "seedprod_section_style",
-				"label" => __("Style", 'ultimate-coming-soon-page'),	
+				"label" => __("Style", 'ultimate-coming-soon-page'),
 				"menu_slug" => "seedprod_coming_soon");
-				
+
 $seedprod_comingsoon->options[] = array( "type" => "color",
                 "id" => "comingsoon_custom_bg_color",
 				"label" => __("Background Color", 'ultimate-coming-soon-page'),
@@ -469,7 +497,7 @@ $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "section_id" => "seedprod_section_style",
                 "setting_id" => "seedprod_comingsoon_options",
                 );
-				
+
 $seedprod_comingsoon->options[] = array( "type" => "image",
                 "id" => "comingsoon_custom_bg_image",
 				"label" => __("Background Image", 'ultimate-coming-soon-page'),
@@ -507,7 +535,7 @@ $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "section_id" => "seedprod_section_style",
                 "setting_id" => "seedprod_comingsoon_options",
                 );
-				
+
 $seedprod_comingsoon->options[] = array( "type" => "select",
                 "id" => "comingsoon_headline_font",
 				"label" => __("Headline Font", 'ultimate-coming-soon-page'),
@@ -525,7 +553,7 @@ $seedprod_comingsoon->options[] = array( "type" => "select",
 				"setting_id" => "seedprod_comingsoon_options",
 				"desc" => __('View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>', 'ultimate-coming-soon-page'),
 				);
-				
+
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_custom_css",
 				"label" => __("Custom CSS", 'ultimate-coming-soon-page'),
@@ -535,7 +563,7 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				"setting_id" => "seedprod_comingsoon_options",
 				"desc" => __('Need to tweaks the styles? Add your custom CSS here.', 'ultimate-coming-soon-page'),
 				);
-				
+
 $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "id" => "comingsoon_footer_credit",
 				"label" => __("Powered By SeedProd", 'ultimate-coming-soon-page'),
@@ -544,8 +572,8 @@ $seedprod_comingsoon->options[] = array( "type" => "radio",
 				"default_value" => "0",
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				);	
- 
-							
+				);
+
+
 
 ?>

@@ -3,7 +3,7 @@ Contributors: blazersix, bradyvercher
 Donate link: http://bit.ly/s2zcgD
 Tags: sidebars, custom sidebars, dynamic sidebar, simple, widget, widgets
 Requires at least: 3.4.2
-Tested up to: 3.9
+Tested up to: 4.1
 Stable tag: trunk
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,7 +44,9 @@ add_action( 'init', 'myprefix_init' );`
 
 = Translation Credits =
 
+* Indonesian (id_ID) - Marga Satrya [v1.1.7]
 * Serbo-Croation (sr_RS) - Borisa Djuraskovic [v1.1.5]
+* Spanish (es_ES) - David Perez [Closemarketing](https://www.closemarketing.es/) [v1.1.7] 
 
 == Installation ==
 
@@ -86,6 +88,12 @@ If your page has any custom loops or queries, they need to be followed by `wp_re
 Some themes register different sidebars for their page templates, which means there isn't a default sidebar that can be replaced. To use Simple Page Sidebars in this instance, you can create a child theme and force page templates with custom sidebars to use the default sidebar.
 
 == Changelog ==
+
+= 1.1.8 =
+* Added Spanish translation.
+
+= 1.1.7 =
+* Added Indonesian translation.
 
 = 1.1.6 =
 *  Prevent quick edit nonces from being submitted when searching or filtering a post list table.

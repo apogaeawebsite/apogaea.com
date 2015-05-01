@@ -57,6 +57,7 @@ h1, h2, h3, h4, h5, h6{
   line-height: 1.2em;
   margin: 5px 0;
   margin: 0.3333rem 0;
+  color: #800000;
 }
 .entry-content h4, .comment-content h4, .mu_register h4 {
   font-size:18px;
@@ -82,8 +83,13 @@ h1, h2, h3, h4, h5, h6{
 font-family: 'Varela','Helvetica Neue',Helvetica,Arial,sans-serif;
 color:red;
 }
+.entry-content p.small {
+  margin: 0px;
+	  padding: 0px;
+	}
 
 /* == NAV = */
+
 
 .main-navigation li ul {
 z-index: 1001; /* above slider titles */
@@ -143,7 +149,7 @@ font-size:18px;
   -webkit-text-fill-color: transparent;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, .main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {
  color: #7C330A;
 }
@@ -176,22 +182,27 @@ margin: 0 36px 0 0;
   line-height: 2;
 }
 }
-/*end 600px width*/
+/*end 800px width*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 a.gridbutton {
-	display:none;}
+	display: inline;}
   
   .sub-menu {
 		display: none;
 	  }
-	}
+
+.mc-field-group-home-outpost-signup-homepage input {
+display: block;
+	  }
+
+}
 	
 .site-header {
   padding: 0;
   padding: 0rem;
 }
-
+  
 
 /* HOMEPAGE & COIN SLIDER */
 .coin-slider { overflow: hidden; zoom: 1; position: relative; }
@@ -279,19 +290,20 @@ a.gridbutton {
     font-size:20px;
     margin: 0px 0px 11px 15px;
     width:31%;
-min-width:286px;
+	min-width:286px;
     background: #3E3D35;
     border-radius: 15px;
     box-shadow: 0px 0px 8px #000;
     color: #fff;
-height: 150px;
+	height: 150px;
 }
 a.gridbutton:hover {
   font-family: 'Comfortaa', 'Helvetica Neue', cursive;
     background: #242018;
     border-radius: 15px;
     box-shadow: 0px 0px 8px #ba8;
-text-decoration:none;
+	text-decoration:none;
+  color:  #bab236;
 }
 a.gridbutton img {
   padding: 0px;
@@ -324,7 +336,7 @@ div.ignition-member {
   line-height: 0.9em;
   display: inline-block;
   vertical-align: top;
-  margin: 0px 2px 10px 3px;
+  margin: 0px 2px 70px 3px;
   border-radius: 15px;
   color: #fff;
 }
@@ -425,7 +437,7 @@ font-size: 1rem;
 line-height: 1.5;
 }
 
-.widget-area .widget .fancy{
+.widget-area .widget .fancy {
   color: #FFF;
   text-shadow: black 0.1em 0.1em 0.2em;
   background-image:none;
@@ -439,7 +451,7 @@ color: #FFFFFF;
 
 .template-front-page .widget-area .widget li a:hover, .widget-area .widget li a:hover {
 text-decoration: underline;
-color: #14A800;
+color: #bab236;
 }
 
 .featured-post {
@@ -454,7 +466,12 @@ a, footer[role="contentinfo"] a, .comments-link a, .entry-meta a {
   color: #095806;
 }
 
-a:hover, a:active, footer[role="contentinfo"] a:hover, footer[role="contentinfo"] a:active, .comments-link a:active, .entry-meta a:active  {
+a:hover, a:active, .comments-link a:active, .entry-meta a:active  {
+  text-decoration: underline;
+  color: #580609;
+}
+
+footer[role="contentinfo"] a:hover, footer[role="contentinfo"] a:active {
   text-decoration: underline;
   color: #580609;
 }
@@ -497,7 +514,7 @@ h2.transmission {
 }
 
 .widget-area .widget a:active, .widget-area .widget a:hover {
-   color: #095806!important; 
+   color: #bab236!important; 
   text-decoration:underline;
 }
 
@@ -602,7 +619,9 @@ a#home-social-gplus {
 a#home-social-email {
     background: url('images/icons/64x64/email.png') center center;
 }
-
+a#home-social-youtube {
+    background: url('images/icons/64x64/youtube.png') center center;
+}
 .daysleft {
   text-align: center;
   display: block;
@@ -785,7 +804,7 @@ width: 100%;
 .tableentry td {
   font-weight: bold;
   	background-color: #eef0ee;
-  	padding: 15px 2px 0px 2px;
+  	padding: 10px 3px 0px 3px;
   border-top:1px solid #fff;
   	border-bottom:1px solid #fff;
   	border-right:1px solid #fff;
@@ -988,19 +1007,20 @@ font-style:italic;
 	}
 .mc-field-group-home-outpost-signup-homepage {
 	  display: inline-block;
-	  margin: 5px 0px 10px 0px;
-	  width: 45%;
+	  margin: 5px 5px 10px 0px;
 	}
 .mc-field-group-home-outpost-signup-homepage-email {
-	  display: inline-block;
 	  margin: 5px 5px 5px 5px;
-	  width: 65%;
 	}
 .mc-field-group-home-outpost-signup label {
-display: inline-block;
 vertical-align: middle;
 margin: 0 1em 0 0;
 		}
+
+.mc-field-group-home-outpost-signup-homepage input[type="email"] {
+	  display: block;
+width: 100%;
+	}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #095806;

@@ -43,6 +43,7 @@ function get_reds($grouptag, $parent_page_id) {
 		
 		    echo '<div class="ignition-member">';
 			echo '<div class="redshirt">';
+		  echo '<a href="' . get_permalink($page->ID) . '" title="'.$page->post_title.'" >';
 		    echo '<span class="outter"><span class="pic" '.$pic_style.'>'; 
 			echo '</span>' . $ignition_title .  str_replace(' ',' ',$page->post_title) .'</span>';
 		    echo '</div> </div> ';
