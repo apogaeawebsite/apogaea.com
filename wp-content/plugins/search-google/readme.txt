@@ -3,12 +3,12 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: google, search, widget, sidebar
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.5
+Tested up to: 4.5
+Stable tag: 1.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Search by Google widget
+Search by Google widget.
 
 == Description ==
 
@@ -37,6 +37,20 @@ Search by Google widget
 3. Google search page after form submit
 
 == Changelog ==
+
+= 1.9 - 2015-08-20 =
+* One more replace PHP4 style constructors with PHP5 constructors - https://make.wordpress.org/core/2015/07/02/deprecating-php4-style-constructors-in-wordpress-4-3/
+
+= 1.8 - 2015-08-14 =
+* Replace PHP4 style constructors with PHP5 constructors - https://make.wordpress.org/core/2015/07/02/deprecating-php4-style-constructors-in-wordpress-4-3/
+
+= 1.7 - 2015-05-28 =
+* Translation ready
+* Added Ukrainian translation
+
+= 1.6 - 2015-05-28 =
+* Minor bugfixing
+* Code cleanup
 
 = 1.5 - 2012-11-07 =
 * minor changes

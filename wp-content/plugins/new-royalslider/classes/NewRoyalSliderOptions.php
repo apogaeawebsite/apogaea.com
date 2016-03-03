@@ -618,6 +618,9 @@ if ( !class_exists( 'NewRoyalSliderOptions' ) ):
 		                'data-type' => 'bool',
 		                'default' => 'true'
 		            ),
+
+		            
+
 					array(
 		                'name' => 'autoHideControlNav',
 		                'label' => __( 'Auto hide navigation', 'new_royalslider' ),
@@ -664,7 +667,23 @@ if ( !class_exists( 'NewRoyalSliderOptions' ) ):
 		                'default' => htmlentities('<iframe src="//player.vimeo.com/video/%id%?byline=0&portrait=0&autoplay=1" frameborder="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>')
 		                ,
 		                'delimeter' => true
-		            )
+		            ),
+
+
+		            array(
+		                'name' => 'forceMaxVideoCoverResolution',
+		                'label' => __( 'YouTube main image resolution ', 'new_royalslider' ),
+		                'desc' => __( '"Standard" will load 640px wide cover image, "Maximum" will load maximum available image (usually ~1200px). The option is not applied on existing slides with videos, delete video URL and paste it again to load the new cover image.', 'new_royalslider' ),
+		                'type' => 'select',
+		                'data-type' => 'str',
+		                'default' => 'medium',
+		                'options' => array(
+		                    'standard' => __('Standard', 'new_royalslider'),
+		                    'maximum' => __('Maximum', 'new_royalslider')
+		                ),
+		                'ignore' => true,
+		                'delimeter' => true
+		            ),
 		        ),
 				
 				'deeplinking' => array(

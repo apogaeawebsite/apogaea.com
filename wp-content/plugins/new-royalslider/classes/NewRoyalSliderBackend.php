@@ -21,6 +21,7 @@ class NewRoyalSliderBackend {
 			add_action( 'wp_ajax_toggleActiveClass', array(&$this, 'ajax_toggle_active') );
 			add_action( 'wp_ajax_rsInstagramAuth', array(&$this, 'ajax_instagram_auth') );
 			add_action( 'wp_ajax_checkPurchaseCode', array(&$this, 'ajax_check_purchase_code') );
+			add_action( 'wp_ajax_updateYouTubeAPICode', array(&$this, 'ajax_update_youtube_api_code') );
 
 			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
 			add_action( 'admin_init', array( &$this, 'build_config_page_options' ) );
@@ -213,6 +214,23 @@ class NewRoyalSliderBackend {
 		
 		die();
 	}
+	function ajax_update_youtube_api_code() {
+		check_ajax_referer('new_royalslider_youtube_api_code_nonce');
+
+		if(!isset($_POST['youtube_api_code'])) {
+			die();
+		}
+
+		$curr_config = get_option('new_royalslider_config');
+		if($curr_config) {
+	    	$curr_config['youtube_public_api_code'] = $_POST['youtube_api_code'];
+	    	update_option( 'new_royalslider_config', $curr_config );
+		}
+
+		echo '[UPDATED]';
+
+		die();
+	}
 	function ajax_check_purchase_code() {
 		check_ajax_referer('new_royalslider_ajax_pcode_nonce');
 
@@ -363,12 +381,27 @@ class NewRoyalSliderBackend {
 
 			
 
+								'getImagesNonce' => wp_create_nonce( 'new_royalslider_get_images_ajax_nonce' ),
+								'getSingleImageNonce' => wp_create_nonce( 'new_royalslider_get_image_ajax_nonce' ),
+								
+								'add_single_image_title' => __('Select image', 'new_royalslider'),
+								'add_multiple_images_title' => __('Select images', 'new_royalslider'),
+
+								'add_single_image_button_text' => __('Select image', 'new_royalslider'),
+								'add_multiple_images_button_text' => __('Add to slider', 'new_royalslider'),
+
+								'add_images_button_text' => __('Add Images', 'new_royalslider'),
+								'adding_images_button_text' => __('Adding...', 'new_royalslider'),
+
+
+
 							'saveNonce' => wp_create_nonce( 'new_royalslider_save_ajax_nonce' ),
 							'previewNonce' => wp_create_nonce( 'new_royalslider_preview_ajax_nonce' ),
 							'refreshTemplateNonce' => wp_create_nonce( 'new_royalslider_refresh_template_nonce' ),
 							'createAdminSlideNonce' => wp_create_nonce( 'new_royalslider_new_admin_slide_nonce' ),
 							'customSourceActionNonce' => wp_create_nonce( 'new_royalslider_custom_source_action_nonce' ),
 							'addAnimBlockClassNonce' => wp_create_nonce( 'new_royalslider_add_anim_block_class_nonce' ),
+							'youTubeAPICodeNonce' => wp_create_nonce( 'new_royalslider_youtube_api_code_nonce' ),
 
 							'img_folder' => NEW_ROYALSLIDER_PLUGIN_URL . 'lib/backend/img/',
 
@@ -379,7 +412,7 @@ class NewRoyalSliderBackend {
 
 							'supports_video' => __('Enter link to YouTube or Vimeo video page.', 'new_royalslider'),
 							'fetching_video_data' => __('Fetching video data...', 'new_royalslider'),
-							'incorrect_x_video_url' => __('Incorrect URL to %s video page.', 'new_royalslider'),
+							'incorrect_x_video_url' => __('Incorrect URL to %s video page, or problem with request.', 'new_royalslider'),
 							'incorrect_video_url' => __('Only YouTube & Vimeo videos are supported by default.', 'new_royalslider'),
 							'incorrect_id_url' => __('Incorrect video URL or problem with request.','new_royalslider'),
 							'drop_to_duplicate' => __('Drop here to duplicate', 'new_royalslider'),
@@ -671,6 +704,16 @@ jQuery(document).ready(function($){
 	            ),
 
 
+				array(
+	                'name' => 'youtube_public_api_code',
+	                'label' => __( 'YouTube API code', 'new_royalslider' ),
+	                'desc' =>  '<br/>Used to fetch YouTube cover image, title and description. <a href="http://help.dimsemenov.com/kb/wordpress-royalslider-tutorials/wp-how-to-get-youtube-api-key" target="_blank">' . __('How to get YouTube API code?', 'new_royalslider') . '</a>',
+	                'type' => 'text',
+	                'default' => '',
+	                'size' => 'regular'
+	            ),
+
+
 	            array(
 	            	 'name' => 'instagram_settings_title',
 	                'label' => __( '<h3>Instagram Settings</h3>', 'new_royalslider' ),
@@ -684,7 +727,7 @@ jQuery(document).ready(function($){
 	            array(
 	                'name' => 'instagram_client_id',
 	                'label' => __( 'Instagram client ID', 'new_royalslider' ),
-	                'desc' =>  '<span style="font-style:normal;"><br/><a href="http://help.dimsemenov.com/kb/wordpress-royalslider-faq/wp-how-to-get-instagram-client-id-and-client-secret-key" target="_blank">' . __('How to get Instagram "client ID" and "client secret key"?', 'new_royalslider') . '</a><br/> ' . __('Redirect URI: ', 'new_royalslider') . '<code>' . $curr_page_url . '</code></div>' . __( '' ),
+	                'desc' =>  '<span style="font-style:normal;"><br/><a href="http://help.dimsemenov.com/kb/wordpress-royalslider-faq/wp-how-to-get-instagram-client-id-and-client-secret-key" target="_blank">' . __('How to get Instagram "client ID" and "client secret key"?', 'new_royalslider') . '</a><br/> ' . __('Redirect URI: ', 'new_royalslider') . '<code>' . $curr_page_url . '</code>',
 	                'type' => 'text',
 	                'default' => '',
 	                'size' => 'regular'

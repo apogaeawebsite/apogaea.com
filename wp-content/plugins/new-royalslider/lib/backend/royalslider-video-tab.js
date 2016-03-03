@@ -81,20 +81,96 @@
 					self.getImageData(type, videoId);
 				}
 			} else {
+				self.currUrl = '';
 				self.setStatus( '' );
 				self.admin.setVideoImage('','');
 			}
 			
 			
 		},
-		getImageData: function(type, videoId) {
+
+		retrieveYouTubeAPIKey: function(type, videoId) {
+			var self = this,
+				youtubekeyvalue;
+
+			if( !$('#youtube-api-code-form').length ) {
+				$('body').append('<div id="youtube-api-code-form">'+
+							    '<form style="padding: 10px;">'+
+							    	
+							    	'<p style="margin-bottom:10px;margin-top:0;">Please enter YouTube API code to fetch image, title and description. You need to enter it only once per website. Code can be also changed on RoyalSlider Settings page.<br/><a href="http://help.dimsemenov.com/kb/wordpress-royalslider-tutorials/wp-how-to-get-youtube-api-key" target="blank">Guide on how to generate the code &rarr;</a></p>'+
+							        '<label style="margin-right:3px;" for="name">API code</label> '+
+							        '<input type="text" autofocus name="youtube-api-code-inp" id="youtube-api-code-inp" class="text ui-widget-content ui-corner-all" />'+
+							        '<div id="youtube-form-status"></div>' +
+							   '</form>'+
+							'</div>');
+			}
+			$('#youtube-form-status').html('');
+
+			var errMsg = 'There was a problem saving YouTube API code option. Try entering it manually on RoyalSlider Settings page and refresh this page, or contact plugin support.';
+
+			var dialog = $("#youtube-api-code-form").dialog({
+		        autoOpen: true,
+		        modal: true,
+		        width:400,
+		        buttons: {
+		            "OK": function() {
+
+		            	youtubekeyvalue = $("#youtube-api-code-inp").val();
+
+		            	$('#youtube-form-status').html('updating...');
+
+		            	$.ajax({
+							url: newRsVars.ajaxurl,
+							type: 'post',
+							data: {
+								action : 'updateYouTubeAPICode',
+								youtube_api_code: youtubekeyvalue,
+								_ajax_nonce : newRsVars.youTubeAPICodeNonce
+							}
+						}).done(function( data ) {
+							if(data.indexOf('[UPDATED]') > -1) {
+								$('#youtube-api-code-setting').val(youtubekeyvalue);
+								self.getImageData(type, videoId, youtubekeyvalue);
+							} else {
+								alert( errMsg );
+							}
+							dialog.dialog("close");
+							
+						}).error(function() {
+							alert( errMsg );
+						});
+
+		                //var youtubekeyvalue = $("#youtube-api-code-inp").val();
+		               	//alert( youtubekeyvalue );
+		                //$(this).dialog("close");
+		            },
+		            "Cancel": function() {
+		                dialog.dialog("close");
+		            }
+		        }
+		    });
+
+
+			return '';
+
+
+		},
+
+		getImageData: function(type, videoId, updatedYouTubeAPIKey) {
 			var self = this;
 			var isVimeo = Boolean(type === 'Vimeo');
+			var youTubeAPIKey = updatedYouTubeAPIKey || $('#youtube-api-code-setting').val() || '';
 			
-			var url = isVimeo ? '://vimeo.com/api/v2/video/'+videoId+'.json?callback=?' : '://gdata.youtube.com/feeds/api/videos/'+videoId+'?v=2&alt=jsonc';
+			if(!isVimeo && !youTubeAPIKey) {
+				youTubeAPIKey = self.retrieveYouTubeAPIKey(type, videoId); //'AIzaSyA_IpXGVybnFnWEwFj0U7CEMmWvRkLmJ7k';
+				if(!youTubeAPIKey) {
+					return;
+				}
+			}
 
-			var pageProtocol = window.location.protocol !== "https:" ? 'http' : 'https';
-			url = pageProtocol + url;
+			var url = isVimeo ? 
+				(window.location.protocol !== "https:" ? 'http' : 'https') + '://vimeo.com/api/v2/video/' + videoId+ '.json?callback=?' : 
+				'https://www.googleapis.com/youtube/v3/videos?id='+videoId+'&key='+youTubeAPIKey+'&part=snippet';
 
 			if(url === self.currUrl) {
 				return;
@@ -120,6 +196,10 @@
 			self.currRequest = $.getJSON(
 				url,
 				function(data) {
+					
+
+
+
 					if(isVimeo) {
 						data = data[0];
 						img = data.thumbnail_large;
@@ -127,11 +207,25 @@
 						title = data.title;
 						description = data.description;
 					} else {
-						data = data.data;
-						img = data.thumbnail.hqDefault;
-						thumb = data.thumbnail.sqDefault;
-						title = data.title;
-						description = data.description;
+						if(data.items && data.items.length && data.items[0].snippet) {
+
+							var forceMaxResolution = $('#video-forceMaxVideoCoverResolution').val() === 'maximum';
+
+							data = data.items[0].snippet;
+
+							if(forceMaxResolution && data.thumbnails.maxres) {
+								img = data.thumbnails.maxres.url; // 1280px+
+							} else if(data.thumbnails.standard) {
+								img = data.thumbnails.standard.url; // 640px
+							} else {
+								img = data.thumbnails.high.url; // 480px
+							}
+							
+							thumb = data.thumbnails.default.url;
+							title = data.title;
+							description = data.description;
+						}
+						
 					}
 
 					var completeStatus = newRsVars.found_video + ' <strong>"' + title+ '"</strong>'; 

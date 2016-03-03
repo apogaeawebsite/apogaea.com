@@ -57,7 +57,6 @@ h1, h2, h3, h4, h5, h6{
   line-height: 1.2em;
   margin: 5px 0;
   margin: 0.3333rem 0;
-  color: #800000;
 }
 .entry-content h4, .comment-content h4, .mu_register h4 {
   font-size:18px;
@@ -88,6 +87,12 @@ color:red;
 	  padding: 0px;
 	}
 
+/* Hide feature post image*/
+.attachment-post-thumbnail { 
+display:none; 
+}
+
+
 /* == NAV = */
 
 
@@ -113,6 +118,10 @@ z-index: 1001; /* above slider titles */
 .main-navigation a:hover {
   color: #79330C;
 }
+
+
+
+/* Entry */
 .entry-header .entry-title {
   font-family: 'Comfortaa', cursive;
   text-align:center;
@@ -281,7 +290,16 @@ text-align:center;
 #coin-slider-coin-slider {
 display:none;
 }
+  .desktoponly {
+  display:none;
+	  }
 }
+
+/* Royal Slider */
+. rsUni .rsGCaption {
+  font-size: 24px;
+  }
+  
 
 /* == HOME BUTTONS == */
 a.gridbutton {
@@ -322,6 +340,89 @@ padding: 4px 5px 0px 0px;
 float:right;
 width: 130px;
 padding-top: 50px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #C3343d;
+  border: 0;
+  line-height: 3.5em;
+  padding: 0 0 0 1em;
+  margin-bottom: 1em;
+  outline: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+.btn:link {
+  color:#ffffff;
+	}
+.btn:visited {
+  color:#ffffff;
+	}
+
+.btn .arrow {
+  display: inline-block;
+  line-height: 3.5em;
+  text-align: center;
+  background: #414142;
+  color: white;
+  font-size: 1em;
+  width: 2.5em;
+  -webkit-transition: margin 200ms;
+          transition: margin 200ms;
+  margin-left: .75em;
+}
+.btn:hover {
+  background: white;
+	  color: #414142;
+}
+.btn:hover .arrow {
+  margin-left: 1.25em;
+  background-color: #262626;
+}
+.btn:active {
+  background: #ccc;
+	  color: #fff;
+}
+.btn:active .arrow {
+  margin-left: 1.5em;
+}
+
+.btn:visited {
+  background: #C3343d;
+	  color: #fff;
+}
+
+.btn-info .arrow {
+  background-color: indianred;
+}
+.btn-info:hover .arrow {
+  background-color: #c14e4e;
+}
+
+.btn-learn .arrow {
+  background-color: salmon;
+}
+.btn-learn:hover .arrow {
+  background-color: #f56d5e;
+}
+
+button::-moz-focus-inner {
+  border: none;
+}
+/* Button CSS for Chrome */
+.entry-content .btn:hover {
+  background: white;
+	  color: #414142;
+}
+.entry-content .btn:visited {
+  background-color: #c3343d;
+	  color: #fff;
+}
+.entry-content .btn:active {
+  background: #ccc;
+	  color: #fff;
 }
 
 
@@ -647,9 +748,9 @@ a#home-social-youtube {
 
 /* == LINES HR == */
 hr {
-  height: 4px;
-  background:#BA8633;
-  border: 1px solid #000;
+  height: 2px;
+  background:#3e3d35;
+  border: 1px solid #3e3d35;
   margin: 30px;
   border-radius: 3px;
   opacity: 0.25;
@@ -1042,3 +1143,22 @@ width: 100%;
   text-transform: uppercase;
   font-weight: bold;
 }
+/*Calendar*/
+#wpfc-calendar-wrapper {
+  background-color: #fff;
+}
+.fc table {
+	border: 1px solid #ededed;
+	border-collapse: collapse;
+	padding: 2px;
+  }
+.entry-content td {
+	 border: 1px solid #ededed;
+  border-collapse: collapse;
+	}
+.entry-content th {
+	 border: 1px solid #ededed;
+    border-collapse: collapse;
+	}
+	
+

@@ -29,15 +29,12 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 		  
-	
-		<div id="homebelow">
-
-
-<a class="gridbutton" id="gridbutton1" href="http://ticketexchange.apogaea.com/" target="_blank"><span>Ticket Exchange</span><img src="http://apogaea.com/wp-content/uploads/2015/03/Ticket-Exchange-Logo-thumb.png" alt="Ticket Exchange" title="Ticket Exchange" /></a>
+		<div id="homebelow" class="widget-area">
+	  <a class="gridbutton" id="gridbutton3" href="http://apogaea.com/get-involved/join-ignition/"><span>Join </br> Ignition!</span><img src="http://apogaea.com/wp-content/uploads/2015/09/board_meeting_thumb.png" alt="BOD Candidates" title="" /></a>
 <a class="gridbutton" id="gridbutton2" href="http://apogaea.com/get-involved/"><span>Participate in Apogaea</span><img src="http://apogaea.com/wp-content/uploads/2014/02/Apo2013_Keli_Play_Sm.jpg" alt="Participate in Apogaea" title="Participate in Apogaea" /></a>
 <a class="gridbutton" id="gridbutton3" href="http://apogaea.com/the-event/tickets/"><span>Ticket Information</span><img src="http://apogaea.com/wp-content/uploads/2014/02/2014TicketDesignCS_Sm.jpg" alt="Ticket Information" title="" /></a>
-
 		  <div style="clear: left"></div>
+
 </div>
 
 		</div><!-- #content -->

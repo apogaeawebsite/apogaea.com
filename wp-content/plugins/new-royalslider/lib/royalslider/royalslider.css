@@ -11,10 +11,6 @@
 	float: left;
 }
 
-.rsWebkit3d .rsSlide {
-	-webkit-transform: translateZ(0);
-}
-
 .royalSlider > .rsContent,
 .royalSlider > .rsSlideRoot {
 	visibility: hidden;

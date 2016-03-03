@@ -31,6 +31,25 @@
         'after_title' => '</h3>',
     ) );
 
+register_sidebar( array(
+'name' => __( 'Survival Guide SideBar', 'apo2014' ),
+'id' => 'sidebar-8',
+'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'twentytwelve' ),
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>',
+) );
+register_sidebar( array(
+'name' => __( 'Art Sidebar', 'apo2014' ),
+'id' => 'sidebar-9',
+'description' => __( 'Appears on Art Pages except the optional Front Page template, which has its own widgets', 'twentytwelve' ),
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>',
+) );
+
 // Get URL of first image in a post
 function catch_that_image($content) {
   $first_img = '';

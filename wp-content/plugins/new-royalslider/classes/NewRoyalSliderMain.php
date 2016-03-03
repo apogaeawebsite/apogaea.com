@@ -6,6 +6,7 @@ class NewRoyalSliderMain {
 	public static $override_all_default_galleries;
 	public static $include_style_tag = true;
 	public static $purchase_code = '';
+	public static $youtube_api_code = '';
 	public static $sliders_init_code = array();
 	public static $updater;
 	public static $image_sizes = array(
@@ -52,6 +53,12 @@ class NewRoyalSliderMain {
 			self::$purchase_code = $this->global_options['purchase_code'];
 		} else {
 			self::$purchase_code = '';
+		}
+
+		if(isset($this->global_options['youtube_public_api_code'])) {
+			self::$youtube_api_code = $this->global_options['youtube_public_api_code'];
+		} else {
+			self::$youtube_api_code = '';
 		}
 
 		
@@ -304,6 +311,7 @@ class NewRoyalSliderMain {
 		if(count($init_codes) > 0 ) {
 			echo "<script id=\"new-royalslider-init-code\" type=\"text/javascript\">\n";
 			echo "jQuery(document).ready(function($) {\n";
+			do_action( 'new_rs_before_js_init_code', $init_codes);
 			foreach($init_codes  as $key => $value) {
 				echo $value;
 			}
@@ -589,7 +597,7 @@ class NewRoyalSliderMain {
         <h3><?php _e('Step 1: Add slider HTML to your theme:', 'new_royalslider') ?></h3>
         <h4><?php _e('using shortcode', 'new_royalslider') ?></h2>
 
-        <p><?php echo sprintf(__('Paste shortcode <code>[new_royalslider id="%1$d"]</code> in content area of any post.<br/> If you add slider that overrides default WordPress gallery, you need to add <code>royalslider="%1$d"</code> attribute to [gallery] shortcode.%2$s', 'new_royalslider'), 
+        <p><?php echo sprintf(__('Paste shortcode <span class="rs-shortcode-example">[new_royalslider id="%1$d"]</span> in content area of any post.<br/> If you add slider that overrides default WordPress gallery, you need to add <code>royalslider="%1$d"</code> attribute to [gallery] shortcode.%2$s', 'new_royalslider'), 
             $slider_id, 
             ($slider_id == 123 ? __(' <br/><span class="no-id">Instead of 123 there should be ID of your slider.</span>', 'new_royalslider') : '') ); ?>
         </p>
